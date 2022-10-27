@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import ProductCard from '../components/ProductCard';
 
 const API ='https://dummyjson.com/products'
 function ProductPage() {
@@ -25,7 +26,20 @@ function ProductPage() {
     );
   }
   return (
-    <div>ProductPage</div>
+    
+      
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {products.map((product) => {
+            return (
+              <div key={product.id}>
+                <ProductCard product={product}/>
+              </div>
+            );
+          })}
+        </div>
+       
+      
+    
   )
 }
 
