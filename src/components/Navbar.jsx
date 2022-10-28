@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import icon from '../assets/shopping-cart.png';
 function Navbar() {
   return (
-    <div className="bg-oscuro flex flex-col justify-between sm:flex-row">
-      <h1 className="px-4 py-2 m-8 text-white text-2xl font-light flex justify-center">
+    <div className="bg-oscuro flex flex-col items-center justify-around sm:flex-row">
+      <h1 className="px-4 py-2 m-8 text-white text-2xl font-light flex">
         Ecommerce
       </h1>
       <div className="flex justify-center">
@@ -23,6 +24,9 @@ function Navbar() {
           {" "}
           Productos
         </Link>
+      </div>
+      <div>
+      <img src={icon} alt="cart" className="w-12 h-12 " />
       </div>
     </div>
   );

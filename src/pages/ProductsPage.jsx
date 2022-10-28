@@ -28,7 +28,7 @@ function ProductPage() {
   return (
     
       
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid justify-items-center grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => {
             return (
               <div key={product.id}>
