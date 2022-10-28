@@ -9,7 +9,7 @@ function ProductCard({ product }) {
                   <h2 className="font-extrabold text-lg">US${product.price}</h2>
                   <p className="leading-relaxed mb-3">{product.description}</p>
                   <div className="flex items-center flex-wrap ">
-                    <button className="bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg">Add to cart</button>
+                    <button onClick={() => alert('add item')} className="bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg">Add to cart</button>
                    
                   </div>
                 </div>
