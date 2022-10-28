@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from "react";
-import ProductCard from "../components/ProductCard";
+import React, {useState, useEffect} from 'react'
+import ProductCard from '../components/ProductCard';
 
-const API = "../../products.json";
+const API ='https://dummyjson.com/products'
 function ProductPage() {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true)
+  
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(API, {
-        mode: "no-cors",
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-        },
-      });
+      const response = await fetch(API);
       const data = await response.json();
       console.log(data);
       setProducts(data.products);
       console.log(products);
-      setLoading(false);
+      setLoading(false)
     }
     fetchData();
   }, []);
@@ -30,16 +26,21 @@ function ProductPage() {
     );
   }
   return (
-    <div className="grid justify-items-center grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {products.map((product) => {
-        return (
-          <div key={product.id}>
-            <ProductCard product={product} />
-          </div>
-        );
-      })}
-    </div>
-  );
+    
+      
+      <div className="grid justify-items-center grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {products.map((product) => {
+            return (
+              <div key={product.id}>
+                <ProductCard product={product}/>
+              </div>
+            );
+          })}
+        </div>
+       
+      
+    
+  )
 }
 
-export default ProductPage;
+export default ProductPage
