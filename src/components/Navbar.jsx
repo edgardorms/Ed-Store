@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import icon from '../assets/shopping-cart.png';
+import { DataContext } from "../context/ContextProvider";
+import { useContext } from "react";
+
 function Navbar() {
+  const {setMenu} = useContext(DataContext)
   return (
     <div className="bg-oscuro flex flex-col items-center justify-around sm:flex-row">
       <h1 className="px-4 py-2 m-8 text-white text-2xl font-light flex">
@@ -26,7 +30,7 @@ function Navbar() {
         </Link>
       </div>
       <div>
-      <img src={icon} alt="cart" className="w-12 h-12 " />
+      <img src={icon} alt="cart" className="w-12 h-12" onClick={()=> setMenu(true)} />
       </div>
     </div>
   );

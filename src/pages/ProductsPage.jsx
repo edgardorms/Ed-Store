@@ -1,4 +1,3 @@
-import React, {useState, useEffect} from 'react'
 import { useContext } from 'react';
 import ProductCard from '../components/ProductCard';
 import {DataContext} from '../context/ContextProvider';
@@ -7,7 +6,7 @@ import {DataContext} from '../context/ContextProvider';
 function ProductPage() {
   
   const {text, x, products, loading} = useContext(DataContext)
-  console.log(text, x, products, loading);
+ 
   
   if (loading) {
     return (

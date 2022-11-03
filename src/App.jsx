@@ -5,6 +5,7 @@ import ErrorPage from "./pages/Error404page";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import {DataContextProvider} from './context/ContextProvider';
+import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/productos" element={<ProductsPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <Cart/>
     </DataContextProvider>
   );
 }
