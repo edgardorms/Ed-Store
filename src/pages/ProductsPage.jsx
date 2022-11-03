@@ -1,13 +1,10 @@
-import { useContext } from 'react';
-import ProductCard from '../components/ProductCard';
-import {DataContext} from '../context/ContextProvider';
-
+import { useContext } from "react";
+import ProductCard from "../components/ProductCard";
+import { DataContext } from "../context/ContextProvider";
 
 function ProductPage() {
-  
-  const {text, x, products, loading} = useContext(DataContext)
- 
-  
+  const { text, x, products, loading } = useContext(DataContext);
+
   if (loading) {
     return (
       <div className="App">
@@ -16,21 +13,19 @@ function ProductPage() {
     );
   }
   return (
-    
-      
+    <>
+      <div className="h-[270px] md:h-[100px]"></div>
       <div className="grid justify-items-center grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {products.map((product) => {
-            return (
-              <div key={product.id}>
-                <ProductCard product={product}/>
-              </div>
-            );
-          })}
-        </div>
-       
-      
-    
-  )
+        {products.map((product) => {
+          return (
+            <div key={product.id}>
+              <ProductCard product={product} />
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
 }
 
-export default ProductPage
+export default ProductPage;

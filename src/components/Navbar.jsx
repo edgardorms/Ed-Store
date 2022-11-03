@@ -3,11 +3,13 @@ import icon from '../assets/shopping-cart.png';
 import { DataContext } from "../context/ContextProvider";
 import { useContext } from "react";
 
+
 function Navbar() {
-  const {setMenu} = useContext(DataContext)
+  const {onOpenModal} = useContext(DataContext)
   return (
-    <div className="bg-oscuro flex flex-col items-center justify-around sm:flex-row">
-      <h1 className="px-4 py-2 m-8 text-white text-2xl font-light flex">
+    <>
+    <div className="fixed z-[1000] bg-sky-200 w-full flex flex-row items-center justify-around">
+      <h1 className=" hidden px-4 py-2 m-8 text-black text-2xl font-light sm:flex">
         Ecommerce
       </h1>
       <div className="flex justify-center">
@@ -30,9 +32,11 @@ function Navbar() {
         </Link>
       </div>
       <div>
-      <img src={icon} alt="cart" className="w-12 h-12" onClick={()=> setMenu(true)} />
+      <img src={icon} alt="cart" className="w-12 h-12"  onClick={onOpenModal} />
       </div>
     </div>
+  
+   </>
   );
 }
 

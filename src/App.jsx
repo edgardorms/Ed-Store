@@ -6,6 +6,8 @@ import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import {DataContextProvider} from './context/ContextProvider';
 import Cart from "./components/Cart";
+import ScrollToTop from "react-scroll-to-top";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Cart/>
+      <ScrollToTop smooth component={<p style={{ color: "blue" }}>UP</p>} />
     </DataContextProvider>
   );
 }

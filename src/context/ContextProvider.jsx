@@ -10,7 +10,10 @@ export const DataContext = createContext();
         const [loading, setLoading] = useState(true);
         const [carrito, setCarrito] = useState([]);
         const [total, setTotal] = useState(0);
-        const [menu, setMenu] = useState(false);
+        const [open, setOpen] = useState(false);
+
+        const onOpenModal = () => setOpen(true);
+        const onCloseModal = () => setOpen(false);
          
 useEffect(() => {
     async function fetchData() {
@@ -87,7 +90,7 @@ useEffect(() =>{
 
 
   return ( 
-            <DataContext.Provider value={{products, loading, addCarrito, carrito, total, reduce, increase, removeProducto, menu, setMenu}}>
+            <DataContext.Provider value={{products, loading, addCarrito, carrito, total, reduce, increase, removeProducto, onOpenModal, onCloseModal, open}}>
                 {children}
             </DataContext.Provider>
         )
