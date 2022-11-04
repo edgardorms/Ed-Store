@@ -7,7 +7,7 @@ function ProductCard({ product }) {
   const { addCarrito } = useContext(DataContext);
 
   return (
-    <div className="p-4 mt-6 w-[360px]">
+    <div className="p-4 mt-6 w-[320px] sm:w-[360px]">
       <div className="h-[512px] rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden">
         <img
           className="h-48 w-full my-4 object-contain object-center scale-110 transition-all duration-400 hover:scale-100"

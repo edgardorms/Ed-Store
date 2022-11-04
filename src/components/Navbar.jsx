@@ -16,7 +16,7 @@ function Navbar() {
           <Link
             to="/"
             type="button"
-            className="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white hover:scale-105 drop-shadow-md  shadow-cla-blue rounded-md px-4 py-2 m-8 transition duration-500 ease select-none hover:bg-rojo4 focus:outline-none focus:shadow-outline"
+            className="bg-gradient-to-r from-indigo-600 to-indigo-800 text-white hover:scale-105 drop-shadow-md  shadow-cla-blue rounded-md px-4 py-2 my-8 mx-1 first-letter:transition duration-500 ease select-none hover:bg-rojo4 focus:outline-none focus:shadow-outline"
           >
             {" "}
             Home
