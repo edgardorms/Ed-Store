@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 const API = "https://api.escuelajs.co/api/v1/products";
 
@@ -10,10 +11,16 @@ export const DataContextProvider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
   const [total, setTotal] = useState(0);
   const [open, setOpen] = useState(false);
-  const [size, setSize] = useState(0)
+  const [size, setSize] = useState(0);
 
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
+  const notify = () => {
+    toast.success("Product added!", {
+      position: toast.POSITION.BOTTOM_LEFT,
+      pauseOnFocusLoss: false,
+    });
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -49,13 +56,12 @@ export const DataContextProvider = ({ children }) => {
   const addCarrito = (id) => {
     let item = products.find((i) => i.id == id);
     if (carrito.includes(item)) {
-      console.log(item);
       increase(item.id);
     } else {
       setCarrito([...carrito, item]);
     }
 
-    console.log(carrito);
+    notify();
   };
 
   const removeProducto = (id) => {
@@ -86,11 +92,10 @@ export const DataContextProvider = ({ children }) => {
         return prev + item.quantity;
       }, 0);
       setSize(res);
-      console.log(size);
     };
     getSize();
   }, [carrito]);
-  
+
   return (
     <DataContext.Provider
       value={{
@@ -106,7 +111,7 @@ export const DataContextProvider = ({ children }) => {
         onCloseModal,
         open,
         setCarrito,
-        size
+        size,
       }}
     >
       {children}

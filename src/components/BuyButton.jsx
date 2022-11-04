@@ -17,7 +17,7 @@ function BuyButton() {
       icon: "success",
     });
   };
-console.log(carrito);
+
   if (carrito.length >= 1) {
     return (
       <div>

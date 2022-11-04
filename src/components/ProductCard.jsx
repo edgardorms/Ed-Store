@@ -1,8 +1,11 @@
 import { DataContext } from "../context/ContextProvider";
 import { useContext } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ProductCard({ product }) {
   const { addCarrito } = useContext(DataContext);
+
   return (
     <div className="p-4 mt-6 w-[360px]">
       <div className="h-[512px] rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden">
@@ -27,6 +30,7 @@ function ProductCard({ product }) {
             >
               Add to cart
             </button>
+            <ToastContainer autoClose={1000} />
           </div>
         </div>
       </div>

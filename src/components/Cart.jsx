@@ -4,14 +4,12 @@ import { useContext } from "react";
 import CartItem from "./CartItem";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
-import BuyButton from './BuyButton'
-
+import BuyButton from "./BuyButton";
 
 function Cart() {
   const { carrito, total, onCloseModal, open, setCarrito } =
     useContext(DataContext);
 
-  
   if (open) {
     return (
       <Modal open={open} onClose={onCloseModal} center>
@@ -40,8 +38,7 @@ function Cart() {
             <strong className="cart-total-title">Total</strong>
             <span className="cart-total-price">${total}</span>
           </div>
-         <BuyButton/>
-  
+          <BuyButton />
         </section>
       </Modal>
     );
@@ -49,8 +46,3 @@ function Cart() {
 }
 
 export default Cart;
-
-
-
-
-
