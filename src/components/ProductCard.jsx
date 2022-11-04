@@ -8,7 +8,7 @@ function ProductCard({ product }) {
 
   return (
     <div className="p-4 mt-6 w-[320px] sm:w-[360px]">
-      <div className="h-[512px] rounded-xl shadow-cla-blue bg-gradient-to-r from-indigo-50 to-blue-50 overflow-hidden">
+      <div className="h-[512px] rounded-xl shadow-cla-blue bg-orange-100 overflow-hidden border border-orange-200">
         <img
           className="h-48 w-full my-4 object-contain object-center scale-110 transition-all duration-400 hover:scale-100"
           src={product.images[0]}
@@ -26,7 +26,7 @@ function ProductCard({ product }) {
           <div className="flex items-center flex-wrap ">
             <button
               onClick={() => addCarrito(product.id)}
-              className="bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg"
+              className="bg-gradient-to-r  from-orange-300 to-orange-500 hover:scale-105 drop-shadow-md  shadow-cla-blue px-4 py-1 rounded-lg"
             >
               Add to cart
             </button>

@@ -14,7 +14,7 @@ function ProductPage() {
   }
   return (
     <>
-      <div className="h-[120px] md:h-[100px]"></div>
+      <div className="h-[85px]"></div>
       <div className="grid justify-items-center grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => {
           return (
