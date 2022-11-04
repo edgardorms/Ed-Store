@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import icon from '../assets/shopping-cart.png';
 import { DataContext } from "../context/ContextProvider";
 import { useContext } from "react";
+import CartSize from "./CartSize";
 
 
 function Navbar() {
@@ -31,8 +32,9 @@ function Navbar() {
           Productos
         </Link>
       </div>
-      <div>
+      <div className="flex">
       <img src={icon} alt="cart" className="w-12 h-12"  onClick={onOpenModal} />
+      <CartSize/>
       </div>
     </div>
   
